@@ -1,28 +1,52 @@
 import Head from "next/head";
 import Header from "@components/Header";
-import Footer from "@components/Footer";
-import FeedbackForm from "@components/FeedbackForm";
-import JokeBlock from "@components/JokeBlock";
+import { apps } from "../data/appsData";
+import { tools } from "../data/saasData";
+import { oses } from "../data/osData";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Next.js Toolbox</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Aexol products</title>
       </Head>
 
       <main>
-        <Header title="Next.js Toolbox" />
+        <div>
+          <Header title="Aexol products" />
+        </div>
         <hr />
-        <p className="description">
-          Here's an example of a Netlify Form! When you fill this out, the
-          submissions can be found in the Netlify Admin site.
-        </p>
-        <FeedbackForm />
-        <JokeBlock />
+        <ul>
+          <h2>Saas tools:</h2>
+          {tools.map((saas, index) => (
+            <li key={index}>
+              <a href={saas.link} target="_blank" rel="noopener">
+                {saas.name} ({saas.category})
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ul>
+          <h2>Open-source:</h2>
+          {oses.map((os, index) => (
+            <li key={index}>
+              <a href={os.link} target="_blank" rel="noopener">
+                {os.name} ({os.category})
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ul>
+          <h2>Mobile apps:</h2>
+          {apps.map((app, index) => (
+            <li key={index}>
+              <a href={app.link} target="_blank" rel="noopener">
+                {app.name} ({app.category})
+              </a>
+            </li>
+          ))}
+        </ul>
       </main>
-      <Footer />
     </div>
   );
 }
