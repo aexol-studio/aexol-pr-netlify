@@ -9,6 +9,7 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>Aexol products</title>
+    <meta name="google-site-verification" content="L-ySu0Ae6UkIZWs4iz_q1zMkHSYn3mIIBKf8BtXxaKo" />
       </Head>
 
       <main>
